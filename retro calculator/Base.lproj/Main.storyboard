@@ -5,6 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Minecraft.ttf">
+            <string>Minecraft</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -199,6 +204,16 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4566" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPU-wV-bES">
+                                <rect key="frame" x="223" y="63" width="200" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="92x-P4-RNm"/>
+                                    <constraint firstAttribute="width" constant="200" id="HF6-aJ-oxL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="30"/>
+                                <color key="textColor" red="0.1764705882" green="0.1843137255" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -206,14 +221,32 @@
                             <constraint firstItem="UCo-qf-5hD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="34i-y2-Q9A"/>
                             <constraint firstItem="ujh-D3-cyz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Bdz-gr-clz"/>
                             <constraint firstAttribute="trailing" secondItem="MD0-s3-6GC" secondAttribute="trailing" id="Bt8-P1-dnc"/>
+                            <constraint firstItem="LPU-wV-bES" firstAttribute="top" secondItem="ujh-D3-cyz" secondAttribute="top" id="CMf-Nq-rIs"/>
+                            <constraint firstItem="LPU-wV-bES" firstAttribute="trailing" secondItem="ujh-D3-cyz" secondAttribute="trailing" id="Elx-Db-Y0j"/>
                             <constraint firstItem="MD0-s3-6GC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="G3o-JF-fJl"/>
                             <constraint firstItem="ujh-D3-cyz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IXy-uf-Gy8"/>
+                            <constraint firstItem="LPU-wV-bES" firstAttribute="top" secondItem="ujh-D3-cyz" secondAttribute="top" constant="20" id="QsH-Ut-7ri"/>
+                            <constraint firstItem="LPU-wV-bES" firstAttribute="top" secondItem="ujh-D3-cyz" secondAttribute="top" id="R6i-ba-Ic3"/>
+                            <constraint firstItem="ujh-D3-cyz" firstAttribute="trailing" secondItem="LPU-wV-bES" secondAttribute="trailing" id="WUT-rR-3km"/>
                             <constraint firstItem="MD0-s3-6GC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Xn8-RX-rle"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MD0-s3-6GC" secondAttribute="bottom" id="Ye3-zx-pPI"/>
                             <constraint firstAttribute="trailing" secondItem="UCo-qf-5hD" secondAttribute="trailing" id="ahJ-SZ-oXg"/>
                             <constraint firstAttribute="bottom" secondItem="UCo-qf-5hD" secondAttribute="bottom" id="cMX-ep-tbQ"/>
                             <constraint firstItem="qeN-4i-mmy" firstAttribute="centerY" secondItem="ujh-D3-cyz" secondAttribute="centerY" constant="30" id="g8E-lv-dVp"/>
+                            <constraint firstItem="keI-GL-XLM" firstAttribute="trailing" secondItem="LPU-wV-bES" secondAttribute="trailing" constant="20" id="iIb-Yf-jFR"/>
+                            <constraint firstItem="LPU-wV-bES" firstAttribute="trailing" secondItem="ujh-D3-cyz" secondAttribute="trailing" id="iSe-hl-Sbs"/>
+                            <constraint firstItem="LPU-wV-bES" firstAttribute="top" secondItem="ujh-D3-cyz" secondAttribute="top" id="tbu-dQ-pQn"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WUT-rR-3km"/>
+                                <exclude reference="CMf-Nq-rIs"/>
+                                <exclude reference="Elx-Db-Y0j"/>
+                                <exclude reference="R6i-ba-Ic3"/>
+                                <exclude reference="iSe-hl-Sbs"/>
+                                <exclude reference="tbu-dQ-pQn"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
