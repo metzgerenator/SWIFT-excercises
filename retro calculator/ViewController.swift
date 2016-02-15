@@ -92,6 +92,24 @@ class ViewController: UIViewController {
         
     }
     
+    
+    
+    @IBAction func onEquals(sender: AnyObject) {
+        processOperation(Operation.Empty)
+        
+        
+    }
+    
+    @IBAction func onClear(sender: AnyObject){
+    
+         runningNumber = ""
+         leftValStr = ""
+         rightValStr = ""
+        processOperation(Operation.Empty)
+         result = ""
+    
+    }
+    
     func processOperation(op: Operation) {
         playSound()
         
