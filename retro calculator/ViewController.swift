@@ -92,7 +92,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func onEquals(sender: AnyObject) {
-        processOperation(Operation.Empty)
+        processOperation(currentOperation)
         
         
     }
