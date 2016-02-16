@@ -1,10 +1,7 @@
 //
 //  ViewController.swift
 //  retro calculator
-//
-//  Created by Aileen Taboy on 2/14/16.
-//  Copyright © 2016 Mike. All rights reserved.
-//
+
 
 import UIKit
 
@@ -88,13 +85,21 @@ class ViewController: UIViewController {
     
     
     @IBAction func onAddPressed(sender: AnyObject) {
-        processOperation(currentOperation)
-        
+        processOperation(Operation.Add)
     }
+    
+   
+    @IBAction func onEqualPressed(sender: AnyObject) {
+            processOperation(currentOperation)
+        }
+        
+        
+   
     
     func processOperation(op: Operation) {
         playSound()
         
+        print("right number is \(rightValStr) left number is \(leftValStr)")
         
         if currentOperation != Operation.Empty {
             //Run some math
@@ -107,11 +112,11 @@ class ViewController: UIViewController {
     
             
             rightValStr = runningNumber
-            runningNumber = " "
+            runningNumber = ""
             
             if currentOperation == Operation.Multiply {
                 
-                    result = "\(Double(leftValStr)! * Double(rightValStr)!)"
+                result = "\(Double(leftValStr)! * Double(rightValStr)!)"
                 
             } else if currentOperation == Operation.Divide {
                 result = "\(Double(leftValStr)! / Double(rightValStr)!)"
@@ -129,9 +134,11 @@ class ViewController: UIViewController {
             currentOperation = op
             
         } else {
+            
+            print("first time operator pressed")
             //This is the first time an operator has been pressed  
             leftValStr = runningNumber
-            runningNumber = " "
+            runningNumber = ""
             currentOperation = op
         }
         

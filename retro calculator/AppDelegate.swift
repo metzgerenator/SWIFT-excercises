@@ -2,8 +2,6 @@
 //  AppDelegate.swift
 //  retro calculator
 //
-//  Created by Aileen Taboy on 2/14/16.
-//  Copyright © 2016 Mike. All rights reserved.
 //
 
 import UIKit
