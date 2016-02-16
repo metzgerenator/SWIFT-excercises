@@ -88,13 +88,24 @@ class ViewController: UIViewController {
         processOperation(Operation.Add)
     }
     
-   
-    @IBAction func onEqualPressed(sender: AnyObject) {
-            processOperation(currentOperation)
-        }
+    
+    
+    
+    @IBAction func onEquals(sender: AnyObject) {
+        processOperation(Operation.Empty)
         
         
-   
+    }
+    
+    @IBAction func onClear(sender: AnyObject){
+    
+         runningNumber = ""
+         leftValStr = ""
+         rightValStr = ""
+        processOperation(Operation.Empty)
+         result = ""
+    
+    }
     
     func processOperation(op: Operation) {
         playSound()
