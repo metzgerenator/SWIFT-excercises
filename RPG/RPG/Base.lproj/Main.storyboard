@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="height" constant="67" id="B8W-Bl-hI1"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnY-gY-4qb">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OnY-gY-4qb">
                                 <rect key="frame" x="428" y="418" width="115" height="113"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="115" id="AEK-uD-VfO"/>
@@ -59,7 +59,7 @@
                                     <constraint firstAttribute="width" constant="340" id="lzZ-sv-irl"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Player attacks dog" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pie-Uo-DVD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Press attack button to attack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pie-Uo-DVD">
                                 <rect key="frame" x="149" y="36" width="297" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="FNY-gs-4Nl"/>
@@ -91,6 +91,17 @@
                                 <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8o-SJ-Eue" userLabel="Attack">
+                                <rect key="frame" x="491" y="495" width="109" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="41N-7O-LoD"/>
+                                    <constraint firstAttribute="width" constant="109" id="Jgz-yZ-gBe"/>
+                                </constraints>
+                                <state key="normal" image="attack"/>
+                                <connections>
+                                    <action selector="attackTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2h3-qO-nTM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -100,6 +111,7 @@
                             <constraint firstItem="z5u-oy-BDd" firstAttribute="centerY" secondItem="yCh-VL-Nhv" secondAttribute="centerY" id="Duc-5I-541"/>
                             <constraint firstItem="bY6-wQ-LWN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="14" id="KGg-Lt-6U6"/>
                             <constraint firstItem="yCh-VL-Nhv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="168" id="LFP-on-3KO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="O8o-SJ-Eue" secondAttribute="bottom" id="RKH-Qu-oOg"/>
                             <constraint firstItem="pie-Uo-DVD" firstAttribute="centerY" secondItem="INV-yG-O9L" secondAttribute="centerY" id="SJ7-9w-LeC"/>
                             <constraint firstAttribute="trailing" secondItem="OnY-gY-4qb" secondAttribute="trailing" constant="57" id="VNN-aa-ZeI"/>
                             <constraint firstItem="oUJ-0q-rz1" firstAttribute="top" secondItem="bY6-wQ-LWN" secondAttribute="bottom" constant="2" id="ewq-nd-kVe"/>
@@ -108,6 +120,7 @@
                             <constraint firstItem="INV-yG-O9L" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="gyH-1c-5mV"/>
                             <constraint firstAttribute="trailing" secondItem="oUJ-0q-rz1" secondAttribute="trailing" id="kzs-ya-Eng"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oUJ-0q-rz1" secondAttribute="bottom" id="lWb-AY-cSh"/>
+                            <constraint firstAttribute="trailing" secondItem="O8o-SJ-Eue" secondAttribute="trailing" id="lZr-e3-kgf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="z5u-oy-BDd" secondAttribute="trailing" constant="162" id="q6j-Hx-9FU"/>
                             <constraint firstItem="bY6-wQ-LWN" firstAttribute="top" secondItem="yCh-VL-Nhv" secondAttribute="bottom" id="vpt-Z4-FKT"/>
                             <constraint firstItem="INV-yG-O9L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xRU-Hl-hyB"/>
@@ -127,6 +140,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="attack" width="198" height="223"/>
         <image name="bg" width="768" height="1024"/>
         <image name="chest" width="393" height="440"/>
         <image name="enem1" width="574" height="487"/>

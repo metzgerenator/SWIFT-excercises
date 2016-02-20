@@ -2,8 +2,7 @@
 //  ViewController.swift
 //  RPG
 //
-//  Created by Aileen Taboy on 2/17/16.
-//  Copyright © 2016 Mike. All rights reserved.
+
 //
 
 import UIKit
@@ -23,6 +22,7 @@ class ViewController: UIViewController {
     
     var player: Player!
     var enemy: Enemy!
+    var chestMessage: String?
     
     
     
@@ -47,12 +47,45 @@ class ViewController: UIViewController {
             enemy  = DevilWizard(startingHP: 60, attackPwr: 15)
         }
         
+        enemyImg.hidden = false
         
     }
   
     @IBAction func onChestTapped(sender: AnyObject) {
+        chetBtn.hidden = true
+        printLbl.text = chestMessage
+        NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "generateRandomEnemy", userInfo: nil, repeats: false)
+        
+        
     }
 
 
+    @IBAction func attackTapped(sender: AnyObject) {
+        
+        if enemy.attemptAttack(player.attackPwr) {
+            printLbl.text = "Attacked \(enemy.type) for \(player.attackPwr) HP "
+            enemyHPLbl.text = "\(enemy.hp)HP"
+        } else {
+            printLbl.text = "Attack was unsuccessful!"
+          }
+        
+        
+        if let loot = enemy.dropLoot() {
+            player.addItemToInventory(loot)
+            
+            chestMessage = "\(player.name) found \(loot)"
+            chetBtn.hidden = false
+      
+        }
+        
+        
+        if !enemy.isAlive {
+            enemyHPLbl.text = ""
+            printLbl.text = "Killed \(enemy.type)"
+            enemyImg.hidden = true
+        }
+        
+        
+    }
 }
 
