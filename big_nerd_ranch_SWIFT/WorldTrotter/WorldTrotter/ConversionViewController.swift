@@ -14,6 +14,8 @@ class ConversionViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet var textField: UITextField!
     
+    var textFieldCharacterChecker  =  NSCharacterSet.alphanumericCharacterSet()
+    
     var fahrenheitValue: Double?{
         didSet {
             updateCelsiusLabel()
@@ -23,10 +25,21 @@ class ConversionViewController: UIViewController, UITextFieldDelegate{
     
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        print("Current text: \(textField.text)")
-        print("Replacement text: \(string)")
         
-        return true
+        print(textFieldCharacterChecker)
+        
+        let existingTextHasDecimalSeparator = textField.text?.rangeOfString(".")
+        let replacementTextHasDecimalSeparator = string.rangeOfString(".")
+        
+       
+      
+        
+        if existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil {
+            return false
+        }else {
+            return true
+        }
+        
     }
     
     
@@ -51,7 +64,6 @@ class ConversionViewController: UIViewController, UITextFieldDelegate{
         if let value = celsiusValue {
             celsiusLabel.text = numberFormatter.stringFromNumber(value)
             
-            print(value)
         }
         else {
             celsiusLabel.text = "???"
