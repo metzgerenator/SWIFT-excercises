@@ -15,6 +15,23 @@ class ConversionViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var textField: UITextField!
     
     
+    override func viewDidLoad() {
+        //Always call the super implementaton of viewDidLoad
+        super.viewDidLoad()
+        print("ConversionViewController loaded its view.")
+       }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        let calendar = NSCalendar.currentCalendar()
+        let date = NSDate()
+        let components = calendar.components(.Hour, fromDate: date)
+        print(components.hour)
+        
+        
+    }
+    
+    
     var fahrenheitValue: Double?{
         didSet {
             if (textField.text?.rangeOfCharacterFromSet(NSCharacterSet.letterCharacterSet()) != nil) {
