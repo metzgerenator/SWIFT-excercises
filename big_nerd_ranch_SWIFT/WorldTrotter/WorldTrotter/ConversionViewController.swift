@@ -14,19 +14,26 @@ class ConversionViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet var textField: UITextField!
     
-    var textFieldCharacterChecker  =  NSCharacterSet.alphanumericCharacterSet()
     
     var fahrenheitValue: Double?{
         didSet {
-            updateCelsiusLabel()
+            if (textField.text?.rangeOfCharacterFromSet(NSCharacterSet.letterCharacterSet()) != nil) {
+               textField?.text = ""
+            } else {
+                updateCelsiusLabel()
+            }
+
+            
+            
         }
     }
     
     
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+//         string  =  NSCharacterSet.letterCharacterSet()
         
-        print(textFieldCharacterChecker)
+        
         
         let existingTextHasDecimalSeparator = textField.text?.rangeOfString(".")
         let replacementTextHasDecimalSeparator = string.rangeOfString(".")
