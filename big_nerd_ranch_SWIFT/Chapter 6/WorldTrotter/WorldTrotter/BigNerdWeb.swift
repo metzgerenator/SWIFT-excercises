@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import WebKit
 
 
-class BigNerdWebController: UIViewController{
+class BigNerdWebController: UIViewController  {
     
-    var webview: WKWebView!
+    var web: WKWebView!
+    
+    override func loadView(){
+        
+//        webview = WKWebView()
+    
+    }
     
     
     

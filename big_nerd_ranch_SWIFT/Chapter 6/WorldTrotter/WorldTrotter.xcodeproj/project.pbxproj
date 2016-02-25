@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2740987C1C7F3BA400ECD655 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740987B1C7F3BA400ECD655 /* File.swift */; };
 		571574311C7BF99100146993 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571574301C7BF99100146993 /* ConversionViewController.swift */; };
 		571EDBC41C7D529C00F382E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 571EDBC31C7D529C00F382E5 /* MapKit.framework */; };
 		571EDBC61C7D5AA200F382E5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571EDBC51C7D5AA200F382E5 /* MapViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2740987B1C7F3BA400ECD655 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		571574301C7BF99100146993 /* ConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
 		571EDBC31C7D529C00F382E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		571EDBC51C7D5AA200F382E5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 		57DF8CA21C7A7C330016E432 = {
 			isa = PBXGroup;
 			children = (
+				2740987B1C7F3BA400ECD655 /* File.swift */,
 				571EDBC31C7D529C00F382E5 /* MapKit.framework */,
 				57DF8CAD1C7A7C340016E432 /* WorldTrotter */,
 				57DF8CAC1C7A7C340016E432 /* Products */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2740987C1C7F3BA400ECD655 /* File.swift in Sources */,
 				57E08FF91C7EB30B00523583 /* BigNerdWeb.swift in Sources */,
 				571574311C7BF99100146993 /* ConversionViewController.swift in Sources */,
 				571EDBC61C7D5AA200F382E5 /* MapViewController.swift in Sources */,
