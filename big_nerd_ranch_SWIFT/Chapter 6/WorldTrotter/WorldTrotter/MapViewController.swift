@@ -6,9 +6,10 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController,MKMapViewDelegate {
     
     var mapView: MKMapView!
+    
     
     override func loadView() {
         //Create a map view 
@@ -16,6 +17,7 @@ class MapViewController: UIViewController {
         
         //Set it as *the* view of the is view controller 
         view = mapView
+        
         
         let segmentedControl = UISegmentedControl(items: ["Standard", "Hybrid", "Satellite"])
         segmentedControl.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
