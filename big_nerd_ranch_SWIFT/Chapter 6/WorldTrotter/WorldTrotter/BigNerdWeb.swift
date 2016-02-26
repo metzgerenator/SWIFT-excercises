@@ -12,14 +12,21 @@ import WebKit
 
 class BigNerdWebController: UIViewController  {
     
-    var web: WKWebView!
+    @IBOutlet weak var webView: UIWebView!
+    let url = NSURL(string: "https://www.bignerdranch.com/")
     
-    override func loadView(){
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-//        webview = WKWebView()
-    
+       
+        
+        let request = NSURLRequest(URL: url!)
+        webView.loadRequest(request)
     }
     
     
     
 }
+
