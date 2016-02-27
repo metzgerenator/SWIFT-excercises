@@ -100,11 +100,25 @@ class MapViewController: UIViewController,MKMapViewDelegate, CLLocationManagerDe
     func locateUser(sender: UIButton!) {
         let bttnTag: UIButton = sender
         
+   
         if bttnTag.tag == 1 {
-            
-            
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
             mapView.showsUserLocation = true
             
+           
+//            
+//            if (mapView.showsUserLocation){
+//                
+//                let userLocation = mapView.userLocation
+//                let location = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+//                let span = MKCoordinateSpanMake(0.5, 0.5)
+//                let region = MKCoordinateRegion(center: location, span: span)
+//                mapView.setRegion(region, animated: true)
+//            }
+            
+
             
         }
         
@@ -112,12 +126,31 @@ class MapViewController: UIViewController,MKMapViewDelegate, CLLocationManagerDe
     
         override func viewDidLoad() {
             super.viewDidLoad()
-           locationManager.requestWhenInUseAuthorization()
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+           
+            
             
             
             print("MapViewController loaded its view")
         }
+    
+    
+    
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("locations updated")
+        
+        let userLocation:CLLocation = locations[0] as CLLocation
+        
+        manager.stopUpdatingLocation()
+        
+        let location = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        let span = MKCoordinateSpanMake(0.5, 0.5)
+        let region = MKCoordinateRegion(center: location, span: span)
+        
+        mapView.setRegion(region, animated: true)
+        
+        
+    }
 
     
 
