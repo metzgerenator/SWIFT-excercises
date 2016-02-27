@@ -12,6 +12,8 @@ class MapViewController: UIViewController,MKMapViewDelegate, CLLocationManagerDe
     var mapView: MKMapView!
     
     
+/*    refer to http://stackoverflow.com/questions/33044148/making-the-map-zoom-to-user-location-and-annotation-swift-2 */
+    
     override func loadView() {
         
       
@@ -102,6 +104,8 @@ class MapViewController: UIViewController,MKMapViewDelegate, CLLocationManagerDe
             
             
             mapView.showsUserLocation = true
+            
+            
         }
         
     }
@@ -109,6 +113,8 @@ class MapViewController: UIViewController,MKMapViewDelegate, CLLocationManagerDe
         override func viewDidLoad() {
             super.viewDidLoad()
            locationManager.requestWhenInUseAuthorization()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            
             
             print("MapViewController loaded its view")
         }
