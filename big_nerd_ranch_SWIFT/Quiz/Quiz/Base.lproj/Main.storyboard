@@ -43,26 +43,39 @@
                                     <action selector="showAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EdB-eA-fHz"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DB-Lg-2Jw">
+                                <rect key="frame" x="279" y="68" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nBw-cE-imc" firstAttribute="centerX" secondItem="j5u-EX-eh9" secondAttribute="centerX" id="1yc-aA-Rbe"/>
                             <constraint firstItem="nBw-cE-imc" firstAttribute="top" secondItem="sFC-gX-on3" secondAttribute="bottom" constant="25" id="2bq-ay-k75"/>
+                            <constraint firstItem="nBw-cE-imc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="APy-Bx-Xla"/>
                             <constraint firstItem="wOQ-I1-dWn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="Alh-RU-fQ6"/>
                             <constraint firstItem="wOQ-I1-dWn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ErS-B9-Jtl"/>
                             <constraint firstItem="j5u-EX-eh9" firstAttribute="top" secondItem="wOQ-I1-dWn" secondAttribute="bottom" constant="20" id="Mnb-T9-Ghd"/>
                             <constraint firstItem="sFC-gX-on3" firstAttribute="top" secondItem="j5u-EX-eh9" secondAttribute="bottom" constant="203" id="Ukj-Dt-F5e"/>
+                            <constraint firstItem="5DB-Lg-2Jw" firstAttribute="top" secondItem="wOQ-I1-dWn" secondAttribute="top" id="Vez-lP-yHd"/>
+                            <constraint firstItem="wOQ-I1-dWn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hhs-yN-FJP"/>
+                            <constraint firstItem="5DB-Lg-2Jw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kfN-AE-7O0"/>
                             <constraint firstItem="sFC-gX-on3" firstAttribute="centerX" secondItem="j5u-EX-eh9" secondAttribute="centerX" id="urE-9F-uMn"/>
-                            <constraint firstItem="wOQ-I1-dWn" firstAttribute="centerX" secondItem="j5u-EX-eh9" secondAttribute="centerX" id="zRj-Lg-PMS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="answerLabel" destination="sFC-gX-on3" id="0ZX-Yu-kVj"/>
-                        <outlet property="questionLabel" destination="wOQ-I1-dWn" id="HTD-s1-gVv"/>
+                        <outlet property="currentQuestionLabelCenterXConstraint" destination="ErS-B9-Jtl" id="ffm-nP-iud"/>
+                        <outlet property="currentQuestonLabel" destination="wOQ-I1-dWn" id="l6g-RC-1sJ"/>
+                        <outlet property="nextQuestionLabel" destination="5DB-Lg-2Jw" id="EWf-jd-Nr8"/>
+                        <outlet property="nextQuestionLabelCenterXConstraint" destination="kfN-AE-7O0" id="vmD-g7-M9y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="479" y="375"/>
         </scene>
     </scenes>
 </document>
