@@ -31,7 +31,9 @@ class MapViewController: UIViewController,MKMapViewDelegate, CLLocationManagerDe
         let button1: UIButton = UIButton(frame: CGRectMake(100,400,100,50))
         button1.backgroundColor = UIColor.blackColor()
         
-        button1.setTitle("Locate Me", forState: UIControlState.Normal)
+        let locateMeButton = NSLocalizedString("Locate Me", comment: "locate user String")
+        
+        button1.setTitle(locateMeButton, forState: UIControlState.Normal)
         button1.addTarget(self, action: "locateUser:", forControlEvents: UIControlEvents.TouchUpInside)
         button1.tag = 1
         //add constraints
@@ -56,7 +58,11 @@ class MapViewController: UIViewController,MKMapViewDelegate, CLLocationManagerDe
         
         //create segmented control
         
-        let segmentedControl = UISegmentedControl(items: ["Standard", "Hybrid", "Satellite"])
+        let standardString = NSLocalizedString("Standard", comment: "Standard map view")
+        let satelliteString = NSLocalizedString("Satellite", comment: "Satellite map view")
+        let hybridString = NSLocalizedString("Hybrid", comment: "Hybrid map view")
+        let segmentedControl = UISegmentedControl(items: [standardString, satelliteString, hybridString])
+        
         segmentedControl.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
         segmentedControl.selectedSegmentIndex = 0
         
