@@ -79,20 +79,37 @@ class ViewController: UIViewController {
         self.nextQuestionLabelCenterXConstraint.constant = 0
         self.currentQuestionLabelCenterXConstraint.constant += screenWidth
 
+//        
+//        UIView.animateWithDuration(0.5, delay: 0, options: [.CurveLinear], animations: {
+//            self.currentQuestonLabel.alpha = 0
+//            self.nextQuestionLabel.alpha = 1
+//            
+//            self.view.layoutIfNeeded()
+//            
+//            }, completion: {_ in
+//                swap(&self.currentQuestonLabel, &self.nextQuestionLabel)
+//                swap(&self.currentQuestionLabelCenterXConstraint, &self.nextQuestionLabelCenterXConstraint)
+//                
+//                self.updateOffScreenLabel()
+//        })
         
-        UIView.animateWithDuration(0.5, delay: 0, options: [], animations: {
-            self.currentQuestonLabel.alpha = 0
-            self.nextQuestionLabel.alpha = 1
-            
-            self.view.layoutIfNeeded()
-            
+        
+        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [.CurveEaseOut], animations:
+            {self.currentQuestonLabel.alpha = 0
+                self.nextQuestionLabel.alpha = 1
+                self.loadViewIfNeeded()
             }, completion: {_ in
                 swap(&self.currentQuestonLabel, &self.nextQuestionLabel)
                 swap(&self.currentQuestionLabelCenterXConstraint, &self.nextQuestionLabelCenterXConstraint)
-                
                 self.updateOffScreenLabel()
         })
         
+//        
+//        UIView.animateWithDuration(1, delay: 1, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: .CurveEaseInOut, animations: {
+//            viewToAnimate.alpha = 0
+//            }) { _ in
+//                viewToAnimate.removeFromSuperview()
+//        }
         
             
     }
