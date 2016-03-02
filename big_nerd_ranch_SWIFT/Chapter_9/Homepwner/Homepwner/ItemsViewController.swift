@@ -61,7 +61,7 @@ class itemsViewController: UITableViewController  {
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
             ac.addAction(cancelAction)
             
-            let deleteAction  = UIAlertAction(title: "Delete", style: .Destructive, handler: { (action)-> Void in
+            let deleteAction  = UIAlertAction(title: "Delete", style: .Destructive, handler:{ (action)-> Void in
             
             //remove the tiem from the store 
             self.itemStore.removeItem(item)
