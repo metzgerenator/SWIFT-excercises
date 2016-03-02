@@ -46,6 +46,38 @@ class itemsViewController: UITableViewController  {
         
     }
     
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        // If the table view is asking to commit a delete command 
+        if editingStyle == .Delete {
+            let item = itemStore.allItems[indexPath.row]
+            
+            
+            let title  = "Delete \(item.name)?"
+            let message = "Are you sure you want to delete this item?"
+            
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
+            
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            ac.addAction(cancelAction)
+            
+            let deleteAction  = UIAlertAction(title: "Delete", style: .Destructive, handler: { (action)-> Void in
+            
+            //remove the tiem from the store 
+            self.itemStore.removeItem(item)
+            
+            //Also remove that row from the table view with an animation 
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            })
+            ac.addAction(deleteAction)
+            
+            presentViewController(ac, animated: true, completion: nil)
+        }
+        
+        //Present the alert controller 
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,6 +114,13 @@ class itemsViewController: UITableViewController  {
         
         return cell
         
+    }
+    
+    
+    
+    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        // Update the model 
+        itemStore.moveItemAtIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
     
