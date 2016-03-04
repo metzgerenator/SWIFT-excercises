@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Items View Controller-->
@@ -47,9 +48,42 @@
                                 <rect key="frame" x="0.0" y="88" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lhP-ze-BrV" id="A1e-3d-oDB">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5g-eL-TXe">
+                                            <rect key="frame" x="33" y="8" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plA-As-vpN">
+                                            <rect key="frame" x="33" y="40" width="36" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndJ-sl-CoF">
+                                            <rect key="frame" x="519" y="23" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="plA-As-vpN" firstAttribute="bottom" secondItem="A1e-3d-oDB" secondAttribute="bottomMargin" id="Akj-10-xd0"/>
+                                        <constraint firstItem="p5g-eL-TXe" firstAttribute="leading" secondItem="A1e-3d-oDB" secondAttribute="leadingMargin" constant="25" id="Aqb-Xd-fOx"/>
+                                        <constraint firstItem="ndJ-sl-CoF" firstAttribute="centerY" secondItem="A1e-3d-oDB" secondAttribute="centerY" id="UXl-BI-Hwf"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ndJ-sl-CoF" secondAttribute="trailing" constant="31" id="VKO-Sr-eV3"/>
+                                        <constraint firstItem="plA-As-vpN" firstAttribute="leading" secondItem="p5g-eL-TXe" secondAttribute="leading" id="e5F-gI-YFN"/>
+                                        <constraint firstItem="p5g-eL-TXe" firstAttribute="top" secondItem="A1e-3d-oDB" secondAttribute="topMargin" id="yK0-DN-Z8E"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="p5g-eL-TXe" id="fTl-GO-qLx"/>
+                                    <outlet property="serialNumberLabel" destination="plA-As-vpN" id="9x8-t8-slN"/>
+                                    <outlet property="valueLabel" destination="ndJ-sl-CoF" id="Mlf-uM-44z"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
