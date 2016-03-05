@@ -87,8 +87,12 @@ class itemsViewController: UITableViewController  {
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
-        tableView.rowHeight = 65
-    }
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 65
+        
+        
+        
+            }
     
     
     
@@ -103,6 +107,10 @@ class itemsViewController: UITableViewController  {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        //get a new or recycled cell 
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath) as! ItemCell
+        
+        //Update the labels for the new preferred text size 
+        cell.updateLabels()
+        
         
         //Set the text on the cell with the description of the item 
         //that is at the nth index of items, where n = row this cell 
