@@ -84,6 +84,7 @@
                                     <outlet property="nameLabel" destination="p5g-eL-TXe" id="fTl-GO-qLx"/>
                                     <outlet property="serialNumberLabel" destination="plA-As-vpN" id="9x8-t8-slN"/>
                                     <outlet property="valueLabel" destination="ndJ-sl-CoF" id="Mlf-uM-44z"/>
+                                    <segue destination="WiV-Be-v8Q" kind="show" identifier="ShowItem" id="9fR-cC-KOc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -96,6 +97,101 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gbu-bR-NN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="712" y="480"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="FJU-Cp-0Ak">
+            <objects>
+                <viewController id="WiV-Be-v8Q" customClass="DetailViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9hh-hr-vYq"/>
+                        <viewControllerLayoutGuide type="bottom" id="jth-u6-efz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yrZ-c4-95X">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="p8t-8W-Id7">
+                                <rect key="frame" x="28" y="8" width="544" height="584"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="n0L-c5-LHQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="544" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6e-1Y-E6c">
+                                                <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YeX-Bb-oP9">
+                                                <rect key="frame" x="53" y="0.0" width="491" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9xf-C9-zEy">
+                                        <rect key="frame" x="0.0" y="38" width="544" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hG7-JR-pJP">
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lae-iw-yFE">
+                                                <rect key="frame" x="56" y="0.0" width="489" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vbQ-2a-TVw">
+                                        <rect key="frame" x="0.0" y="76" width="544" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQS-fg-NAW">
+                                                <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nKY-MX-eSP">
+                                                <rect key="frame" x="55" y="0.0" width="490" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzz-5L-g71">
+                                        <rect key="frame" x="0.0" y="114" width="544" height="470"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="s6e-1Y-E6c" firstAttribute="leading" secondItem="hG7-JR-pJP" secondAttribute="leading" id="eBe-w1-Pxp"/>
+                                    <constraint firstItem="hG7-JR-pJP" firstAttribute="leading" secondItem="VQS-fg-NAW" secondAttribute="leading" id="uxJ-EX-tQf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p8t-8W-Id7" firstAttribute="leading" secondItem="yrZ-c4-95X" secondAttribute="leadingMargin" constant="8" id="9sz-ll-4K0"/>
+                            <constraint firstItem="p8t-8W-Id7" firstAttribute="top" secondItem="yrZ-c4-95X" secondAttribute="topMargin" constant="8" id="Nv7-Gh-plV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p8t-8W-Id7" secondAttribute="trailing" constant="8" id="ob4-TA-Bg6"/>
+                            <constraint firstItem="jth-u6-efz" firstAttribute="top" secondItem="p8t-8W-Id7" secondAttribute="bottom" constant="8" id="ver-yS-TNR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="rzz-5L-g71" id="L16-XY-H9C"/>
+                        <outlet property="nameField" destination="YeX-Bb-oP9" id="8hn-1X-9u8"/>
+                        <outlet property="serialNumberField" destination="lae-iw-yFE" id="5at-HE-JHz"/>
+                        <outlet property="valueField" destination="nKY-MX-eSP" id="WZx-R0-KLa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQr-b4-hPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1419" y="465"/>
         </scene>
     </scenes>
 </document>
