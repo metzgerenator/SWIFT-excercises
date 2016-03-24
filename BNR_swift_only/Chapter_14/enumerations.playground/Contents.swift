@@ -111,6 +111,56 @@ print("the bulb's temperature is \(bulbTemperature)")
 
 
 
+enum ShapeDimensions{
+    // Point has no associated value - it is dimensionless 
+    case Point
+    
+    
+    
+    //Square's associated value is the lenth of one side 
+    case Square(Double)
+    
+    //Rectangle's associated value defines its width and height 
+    case Rectangle(width: Double, height: Double)
+    
+    func area() ->Double {
+        switch self {
+        case .Point:
+            return 0
+        case let .Square(side):
+            return side * side
+            
+        case let .Rectangle(width: w, height: h):
+            return w * h
+        }
+    }
+    
+    
+    
+    
+}
+
+var squareShape = ShapeDimensions.Square(10.0)
+var rectShape = ShapeDimensions.Rectangle(width: 5.0, height: 10.0)
+var pointShape = ShapeDimensions.Point
+
+
+print("square's area = \(squareShape.area())")
+print("rectangle's area = \(rectShape.area())")
+print("point's area= \(pointShape.area())")
+
+
+
+ enum FamilyTree {
+    case NoknownParents
+   indirect case OneKknownParent(name: String, ancestors: FamilyTree)
+   indirect case TwoKnownParents(fatherName: String, fatherAncestors: FamilyTree,
+        motherName: String, motherAncestors: FamilyTree)
+}
+
+let fredAncestors = FamilyTree.TwoKnownParents(fatherName: "Fred sr.", fatherAncestors: .OneKknownParent(name: "Beth", ancestors: .NoknownParents), motherName: "Marsha", motherAncestors: .NoknownParents)
+
+
 
 
 
