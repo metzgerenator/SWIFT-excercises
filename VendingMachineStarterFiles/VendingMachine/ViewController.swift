@@ -18,7 +18,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     
+    let vendingMachine: VendingMachine
+    
     required init?(coder aDecoder: NSCoder) {
+        do{
+            let dictionary = try
+            PlistConverter.dictionaryFromFile("VendingInventory", ofType: "plist")
+            let inventory = try inventoryUnarchiver.vendingInventoryFromDictionary(dictionary)
+            self.vendingMachine = VendingMachine(inventory: inventory)
+        } catch let error {
+           fatalError("\(error)")
+        
+            
+        }
         super.init(coder: aDecoder)
     }
     
@@ -26,6 +38,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setupCollectionViewCells()
+        print(vendingMachine.inventory)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +60,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return vendingMachine.selection.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

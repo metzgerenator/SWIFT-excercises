@@ -34,6 +34,7 @@ protocol ItemType {
 enum InventoryError: ErrorType {
     case InvalidResource
     case ConversionError
+    case InvalidKey
 }
 
 
@@ -45,23 +46,44 @@ class PlistConverter{
         guard let path = NSBundle.mainBundle().pathForResource(resource, ofType: type) else {
             throw InventoryError.InvalidResource
         }
-        guard let dictionary = NSDictionary(contentsOfFile: path), let castDictionary = dictionary as ? [String: AnyObject] else{
+        guard let dictionary = NSDictionary(contentsOfFile: path), let castDictionary = dictionary as? [String: AnyObject] else {
             throw InventoryError.ConversionError
         }
         
-        return dictionary
+        return castDictionary
     }
     
     
 }
 
 
+class inventoryUnarchiver {
+    class func vendingInventoryFromDictionary(dictionary: [String: AnyObject])throws -> [VendingSelection: ItemType] {
+        var inventory: [VendingSelection :ItemType] = [:]
+        
+        for(key, value) in dictionary {
+            if let itemDict = value as? [String : Double],
+            let price = itemDict["price"], let quantity = itemDict["quantity"]{
+                let item  = VendingItem(price: price, quantity: quantity)
+                
+                guard let key = VendingSelection(rawValue: key) else {
+                    throw InventoryError.InvalidKey
+                    
+                }
+                inventory.updateValue(item, forKey: key)
+             }
+        }
+        
+        return inventory
+    }
+}
+
 
 
 
 //Concrete Types
 
-enum VendingSelection {
+enum VendingSelection: String {
     
     case Soda
     case DietSoda
