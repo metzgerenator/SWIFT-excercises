@@ -11,9 +11,12 @@ import Foundation
 
 var myTown = Town()
 myTown.changePopulation(500)
-myTown.printTownDescritpion()
+let fredTheZombie = Zombie()
+fredTheZombie.town = myTown
+fredTheZombie.terrorizeTown()
+fredTheZombie.town?.printTownDescritpion()
 
-let gm = Monster()
-gm.town = myTown
-gm.terrorizeTown()
+
+fredTheZombie.changeName("Fred the Zombie", walksWithLimp: false)
+
 
