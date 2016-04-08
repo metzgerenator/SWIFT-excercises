@@ -10,6 +10,7 @@
 		27302D7C1CB532AF00BA99F5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27302D7B1CB532AF00BA99F5 /* main.swift */; };
 		27302D831CB5342C00BA99F5 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27302D821CB5342C00BA99F5 /* Town.swift */; };
 		27302D851CB5391A00BA99F5 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27302D841CB5391A00BA99F5 /* Monster.swift */; };
+		275C86AB1CB5C3A8007AB885 /* Zombie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275C86AA1CB5C3A8007AB885 /* Zombie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		27302D7B1CB532AF00BA99F5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		27302D821CB5342C00BA99F5 /* Town.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
 		27302D841CB5391A00BA99F5 /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		275C86AA1CB5C3A8007AB885 /* Zombie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zombie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				27302D7B1CB532AF00BA99F5 /* main.swift */,
 				27302D841CB5391A00BA99F5 /* Monster.swift */,
 				27302D821CB5342C00BA99F5 /* Town.swift */,
+				275C86AA1CB5C3A8007AB885 /* Zombie.swift */,
 			);
 			path = MonsterTown;
 			sourceTree = "<group>";
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27302D7C1CB532AF00BA99F5 /* main.swift in Sources */,
+				275C86AB1CB5C3A8007AB885 /* Zombie.swift in Sources */,
 				27302D851CB5391A00BA99F5 /* Monster.swift in Sources */,
 				27302D831CB5342C00BA99F5 /* Town.swift in Sources */,
 			);
@@ -249,6 +253,7 @@
 				27302D811CB532AF00BA99F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
