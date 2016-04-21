@@ -21,22 +21,25 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     let vendingMachine: VendingMachine
     
     required init?(coder aDecoder: NSCoder) {
+        
         do{
-            let dictionary = try
-            PlistConverter.dictionaryFromFile("VendingInventory", ofType: "plist")
-            let inventory = try inventoryUnarchiver.vendingInventoryFromDictionary(dictionary)
+            let dictionary = try PlistConverter.dictionaryFromFile("VendingInventory", ofType: "plist")
+            
+            let inventory = try InventoryUnarchiver.vendingInventoryFromDictionary(dictionary)
             self.vendingMachine = VendingMachine(inventory: inventory)
         } catch let error {
-           fatalError("\(error)")
-        
-            
+            fatalError("\(error)")
         }
+        
+        
         super.init(coder: aDecoder)
+    
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         setupCollectionViewCells()
         print(vendingMachine.inventory)
     }

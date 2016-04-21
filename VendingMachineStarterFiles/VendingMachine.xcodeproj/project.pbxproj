@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		57210DF51CB33C8100ACDB0E /* VendingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57210DF41CB33C8100ACDB0E /* VendingMachine.swift */; };
+		57189DDD1CC85A510005DC10 /* VendingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57189DDC1CC85A510005DC10 /* VendingMachine.swift */; };
 		97EC979F1C4E80860081754A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC979E1C4E80860081754A /* AppDelegate.swift */; };
 		97EC97A11C4E80860081754A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC97A01C4E80860081754A /* ViewController.swift */; };
 		97EC97A41C4E80860081754A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97EC97A21C4E80860081754A /* Main.storyboard */; };
@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		57210DF41CB33C8100ACDB0E /* VendingMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendingMachine.swift; sourceTree = "<group>"; };
+		57189DDC1CC85A510005DC10 /* VendingMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendingMachine.swift; sourceTree = "<group>"; };
 		97EC979B1C4E80860081754A /* VendingMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VendingMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97EC979E1C4E80860081754A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97EC97A01C4E80860081754A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,9 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				97EC979E1C4E80860081754A /* AppDelegate.swift */,
-				57210DF41CB33C8100ACDB0E /* VendingMachine.swift */,
 				97EC97A01C4E80860081754A /* ViewController.swift */,
 				97EC97B01C4E8C7F0081754A /* VendingItemCell.swift */,
+				57189DDC1CC85A510005DC10 /* VendingMachine.swift */,
 				97EC97A21C4E80860081754A /* Main.storyboard */,
 				97EC97A51C4E80860081754A /* Assets.xcassets */,
 				97EC97A71C4E80860081754A /* LaunchScreen.storyboard */,
@@ -148,7 +148,7 @@
 				97EC97A11C4E80860081754A /* ViewController.swift in Sources */,
 				97EC979F1C4E80860081754A /* AppDelegate.swift in Sources */,
 				97EC97B11C4E8C7F0081754A /* VendingItemCell.swift in Sources */,
-				57210DF51CB33C8100ACDB0E /* VendingMachine.swift in Sources */,
+				57189DDD1CC85A510005DC10 /* VendingMachine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

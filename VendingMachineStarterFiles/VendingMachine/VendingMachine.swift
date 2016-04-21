@@ -2,76 +2,76 @@
 //  VendingMachine.swift
 //  VendingMachine
 //
-//  Created by Aileen Taboy on 4/4/16.
+//  Created by Aileen Taboy on 4/20/16.
 //  Copyright © 2016 Treehouse. All rights reserved.
 //
 
 import Foundation
 
-// Protocols 
+
+//
 
 protocol VendingMachineType {
-    var selection: [VendingSelection] { get }
+    var selection: [VendingSelection]{get}
+    var inventory: [VendingSelection: ItemType] {get set}
+    var amountDeposited: Double {get set }
     
-    var inventory: [VendingSelection: ItemType] { get set }
-    var amountDeposited: Double { get set }
     
     init(inventory: [VendingSelection: ItemType])
-    
     func vend(selection: VendingSelection, quantity: Double) throws
     func deposit(amount: Double)
-    
 }
+
 
 protocol ItemType {
-    var price: Double { get }
-    var quantity: Double { get set }
+    var price: Double {get }
+    var quantity: Double {get set }
 }
-
 
 //Error Types 
 
 enum InventoryError: ErrorType {
-    case InvalidResource
+    case InvalidResourse
     case ConversionError
     case InvalidKey
 }
 
+//Helper Classes
 
-//Helper Classes 
-
-class PlistConverter{
-    class func dictionaryFromFile(resource: String, ofType type: String) throws -> [String : AnyObject] {
+class PlistConverter {
+    class func dictionaryFromFile(resource: String, ofType type: String) throws ->[String: AnyObject]{
+        
         
         guard let path = NSBundle.mainBundle().pathForResource(resource, ofType: type) else {
-            throw InventoryError.InvalidResource
+            throw InventoryError.InvalidResourse
         }
-        guard let dictionary = NSDictionary(contentsOfFile: path), let castDictionary = dictionary as? [String: AnyObject] else {
+        
+        guard let dictionary = NSDictionary(contentsOfFile: path),
+        let castDictionary = dictionary as? [String: AnyObject] else {
+            
             throw InventoryError.ConversionError
         }
         
         return castDictionary
     }
-    
-    
 }
 
-
-class inventoryUnarchiver {
-    class func vendingInventoryFromDictionary(dictionary: [String: AnyObject])throws -> [VendingSelection: ItemType] {
-        var inventory: [VendingSelection :ItemType] = [:]
+class InventoryUnarchiver {
+    class func vendingInventoryFromDictionary(dictonary: [String : AnyObject]) throws -> [VendingSelection : ItemType]{
+        var inventory: [VendingSelection : ItemType] = [:]
         
-        for(key, value) in dictionary {
+        for(key, value) in dictonary {
             if let itemDict = value as? [String : Double],
-            let price = itemDict["price"], let quantity = itemDict["quantity"]{
-                let item  = VendingItem(price: price, quantity: quantity)
-                
-                guard let key = VendingSelection(rawValue: key) else {
-                    throw InventoryError.InvalidKey
+                let price = itemDict["price"], let quantity = itemDict["quantity"] {
+                    let item = VendingItem(price: price, quantity: quantity)
                     
-                }
-                inventory.updateValue(item, forKey: key)
-             }
+                    guard let key  = VendingSelection(rawValue: key) else {
+                        throw InventoryError.InvalidKey
+                    }
+                    
+                    
+                    inventory.updateValue(item, forKey: key)
+            }
         }
         
         return inventory
@@ -79,9 +79,7 @@ class inventoryUnarchiver {
 }
 
 
-
-
-//Concrete Types
+//Concrete Types 
 
 enum VendingSelection: String {
     
@@ -97,23 +95,26 @@ enum VendingSelection: String {
     case FruitJuice
     case SportsDrink
     case Gum
+ 
 }
 
 
 struct VendingItem: ItemType {
+    
     let price: Double
     var quantity: Double
     
 }
 
 
+
+
 class VendingMachine: VendingMachineType {
     let selection: [VendingSelection] = [.Soda, .DietSoda, .Chips, .Cookie, .Sandwich, .Wrap, .CandyBar, .PopTart, .Water, .FruitJuice, .SportsDrink, .Gum]
-    
     var inventory: [VendingSelection: ItemType]
     var amountDeposited: Double = 10.0
     
-    required init(inventory: [VendingSelection : ItemType]) {
+    required init (inventory: [VendingSelection: ItemType]){
         self.inventory = inventory
     }
     
@@ -124,20 +125,7 @@ class VendingMachine: VendingMachineType {
     func deposit(amount: Double) {
         //add code
     }
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
