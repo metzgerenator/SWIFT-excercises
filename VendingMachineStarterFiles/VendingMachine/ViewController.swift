@@ -19,6 +19,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var quantityLabel: UILabel!
     
     let vendingMachine: VendingMachine
+    var currentSelection: VendingSelection?
+    var quantity: Double = 1.0
     
     required init?(coder aDecoder: NSCoder) {
         
@@ -41,7 +43,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // Do any additional setup after loading the view, typically from a nib.
         
         setupCollectionViewCells()
-        print(vendingMachine.inventory)
+        balanceLabel.text = "$\(vendingMachine.amountDeposited)"
+        //print(vendingMachine.inventory)
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,11 +72,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! VendingItemCell
         
+        let item = vendingMachine.selection[indexPath.row]
+        cell.iconView.image = item.icon()
+        
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         updateCellBackgroundColor(indexPath, selected: true)
+        
+        
+        currentSelection = vendingMachine.selection[indexPath.row]
+        updateTotalPriceLabel()
+        
+        
+        
         
     }
     
@@ -96,5 +109,44 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     // MARK: - Helper Methods
+    
+    
+    
+    @IBAction func purchase() {
+        
+        if let currentSelection = currentSelection {
+            
+            do {
+                 try vendingMachine.vend(currentSelection, quantity: quantity)
+                balanceLabel.text = "$\(vendingMachine.amountDeposited)"
+            } catch {
+                //FIXME: Eror Handling Code!!!
+            }
+            
+        } else {
+            //FIXME: Alert user to no selection
+        }
+        
+    }
+    
+    
+    @IBAction func updateQuantity(sender: UIStepper) {
+        
+        print(sender.value)
+        
+        quantity = sender.value
+        updateTotalPriceLabel()
+    }
+    
+    func updateTotalPriceLabel(){
+        
+        if let currentSelection = currentSelection, let item = vendingMachine.itemForCurrentSelection(currentSelection) {
+            totalLabel.text  = "$\(item.price * quantity)"
+        }
+
+        
+    }
+    
+    
 }
 
