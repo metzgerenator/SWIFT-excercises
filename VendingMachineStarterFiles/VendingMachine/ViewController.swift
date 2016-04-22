@@ -118,9 +118,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             do {
                  try vendingMachine.vend(currentSelection, quantity: quantity)
-                balanceLabel.text = "$\(vendingMachine.amountDeposited)"
+                updateBalanceLabel()
+               // balanceLabel.text = "$\(vendingMachine.amountDeposited)"
+            } catch VendingMachineError.OutOfStock{
+               showAlert()
             } catch {
-                //FIXME: Eror Handling Code!!!
+                
             }
             
         } else {
@@ -146,7 +149,43 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
         
     }
+   
     
+    func updateQuantityLabel() {
+        quantityLabel.text = "\(quantity)"
+    }
+    
+    func updateBalanceLabel() {
+        balanceLabel.text = "$\(vendingMachine.amountDeposited)"
+    }
+    
+    func reset() {
+        quantity = 1
+        updateTotalPriceLabel()
+        updateQuantityLabel()
+    }
+    func showAlert(){
+        
+        
+        let alertController = UIAlertController(title: "out of stock", message: nil, preferredStyle: .Alert)
+        
+        
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: dismissAlert)
+        
+        alertController.addAction(okAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+        
+        func dismissAlert(sender: UIAlertAction) {
+            
+        }
+        
+        
+    }
+    
+   
+
     
 }
+
 
