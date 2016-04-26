@@ -12,10 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let story = Page(story: .TouchDown)
-        
-        story.firstChoice = (title: "some Title", page: Page(story: .Droid))
+       
         
     }
 
@@ -23,7 +20,23 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "startAdventure"{
+            
+            if let pagecontroller = segue.destinationViewController as? PageController {
+                pagecontroller.page = Adventure.story
+                
+            }
+        
+    }
+    
+    
 
 
 }
 
+}

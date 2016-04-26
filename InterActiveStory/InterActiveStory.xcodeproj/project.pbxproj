@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		279C4C011CCEC55C008AC366 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279C4C001CCEC55C008AC366 /* PageController.swift */; };
 		571F381E1CCD9C92005CCDDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571F381D1CCD9C92005CCDDA /* AppDelegate.swift */; };
 		571F38201CCD9C92005CCDDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571F381F1CCD9C92005CCDDA /* ViewController.swift */; };
 		571F38231CCD9C92005CCDDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 571F38211CCD9C92005CCDDA /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		279C4C001CCEC55C008AC366 /* PageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 		571F381A1CCD9C92005CCDDA /* InterActiveStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterActiveStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		571F381D1CCD9C92005CCDDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		571F381F1CCD9C92005CCDDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,11 +60,12 @@
 			children = (
 				571F381D1CCD9C92005CCDDA /* AppDelegate.swift */,
 				571F381F1CCD9C92005CCDDA /* ViewController.swift */,
+				571F382F1CCDA22A005CCDDA /* InteractiveStory.swift */,
+				279C4C001CCEC55C008AC366 /* PageController.swift */,
 				571F38211CCD9C92005CCDDA /* Main.storyboard */,
 				571F38241CCD9C92005CCDDA /* Assets.xcassets */,
 				571F38261CCD9C92005CCDDA /* LaunchScreen.storyboard */,
 				571F38291CCD9C92005CCDDA /* Info.plist */,
-				571F382F1CCDA22A005CCDDA /* InteractiveStory.swift */,
 			);
 			path = InterActiveStory;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				279C4C011CCEC55C008AC366 /* PageController.swift in Sources */,
 				571F38301CCDA22A005CCDDA /* InteractiveStory.swift in Sources */,
 				571F38201CCD9C92005CCDDA /* ViewController.swift in Sources */,
 				571F381E1CCD9C92005CCDDA /* AppDelegate.swift in Sources */,
@@ -288,6 +292,7 @@
 				571F382E1CCD9C92005CCDDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -71,8 +71,63 @@ class Page {
 }
 
 
+extension Page{
+    
+    func addChoice(title: String, story: Story) -> Page {
+        let page = Page(story: story)
+        return addChoice(title, page: page)
+    }
+    
+    
+    func addChoice(title: String, page: Page) -> Page {
+        switch (firstChoice, secondChoice) {
+        case (.Some, .Some):break
+        case (.None, .None), (.None, .Some):
+            firstChoice = (title, page)
+        case (.Some, .None):
+            secondChoice = (title, page)
+            
+         
+        }
+        return page
+        
+      
+}
+
+}
 
 
+
+struct Adventure {
+    
+    static var story: Page {
+        let returnTrip = Page(story: .ReturnTrip)
+        let touchDown = returnTrip.addChoice("Stop and Investigate", story: .TouchDown)
+        let homeward = returnTrip.addChoice("continue Home to Earth", story: .Homeward)
+        
+        let rover = touchDown.addChoice("Explore the Rover", story: .Rover)
+        let crate = touchDown.addChoice("Open the Crate", story: .Crate)
+        
+        homeward.addChoice("Head back to Mars", page: touchDown)
+        let home = homeward.addChoice("Continue Home to Earth", story: .Home)
+        
+        let cave = rover.addChoice("Explore the Coordinates", story: .Cave)
+        rover.addChoice("Return to Earth", page: home)
+        
+        cave.addChoice("Continue towards faint light", story: .Droid)
+        cave.addChoice("Refill the ship and explore the rover", page: rover)
+        
+        crate.addChoice("Explore the Rover", page: rover)
+        crate.addChoice("Use the key", story: .Monster)
+        
+        return returnTrip
+        
+        
+        
+    }
+    
+    
+}
 
 
 
