@@ -9,7 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    enum Error: ErrorType {
+        case noName
+    }
+    
+    
 
+    @IBOutlet var nameTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -27,10 +34,36 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "startAdventure"{
             
-            if let pagecontroller = segue.destinationViewController as? PageController {
-                pagecontroller.page = Adventure.story
+           
+            
+            do{
+                if let name = nameTextField.text {
+                    if name == "" {
+                        throw Error.noName
+                    }
+                    
+                    if let pagecontroller = segue.destinationViewController as? PageController {
+                        pagecontroller.page = Adventure.story(name)
+                        
+                    }
+                    
+                    
+                    
+                }
+            } catch Error.noName {
+                let alertController = UIAlertController(title: "Name Not Provided", message: "Provide a name to start your story!", preferredStyle: .Alert)
+                let action = UIAlertAction(title: "ok", style: .Default, handler: nil)
+                alertController.addAction(action)
+                
+                presentViewController(alertController, animated: true, completion: nil)
+                
+            } catch let error {
+                fatalError("\(error)")
                 
             }
+            
+            
+            
         
     }
     
