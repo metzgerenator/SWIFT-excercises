@@ -10,8 +10,12 @@ import Foundation
 import CoreData
 
 
-class DataController: NSObject {
+public class DataController: NSObject {
     
+    
+    static let sharedInstance = DataController()
+    
+    private override init() { }
     
   private lazy var applicationDocumentsDirectory: NSURL = {
        
@@ -22,7 +26,7 @@ class DataController: NSObject {
     }()
     
     private lazy var managedObjectModel: NSManagedObjectModel = {
-       let modelURL = NSBundle.mainBundle().URLForResource("TodoList", withExtension:  "momd")!
+       let modelURL = NSBundle.mainBundle().URLForResource("ToDoList", withExtension:  "momd")!
         
         return NSManagedObjectModel(contentsOfURL: modelURL)!
         
@@ -32,10 +36,9 @@ class DataController: NSObject {
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url  = self.applicationDocumentsDirectory.URLByAppendingPathExtension("TodoList.sqlite")
+        let url  = self.applicationDocumentsDirectory.URLByAppendingPathExtension("ToDoList.sqlite")
         
         
-        return coordinator
         
         do {
             
@@ -57,7 +60,8 @@ class DataController: NSObject {
             abort()
             
         }
-        
+        return coordinator
+
         
     } ()
     
@@ -73,6 +77,36 @@ class DataController: NSObject {
         return managedObjectContext
         
     }()
+    
+    
+    
+    
+    
+    public func saveContext() {
+        
+        if managedObjectContext.hasChanges {
+            
+            do {
+                try managedObjectContext.save()
+                
+            } catch let error as NSError {
+                
+                print("Unresolved error \(error), \(error.userInfo)")
+                
+                
+                
+            }
+            
+            
+            
+        }
+        
+        
+        
+        
+    }
+    
+    
     
     
 }
