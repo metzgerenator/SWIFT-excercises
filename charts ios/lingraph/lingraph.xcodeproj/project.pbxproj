@@ -1,0 +1,371 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06B84367A8E8B77F26C3C9A3 /* Pods_lingraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2487AB19D5DD9E7E307335 /* Pods_lingraph.framework */; };
+		579C89B31D73904A0057AB3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C89B21D73904A0057AB3D /* AppDelegate.swift */; };
+		579C89B51D73904A0057AB3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579C89B41D73904A0057AB3D /* ViewController.swift */; };
+		579C89B81D73904A0057AB3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 579C89B61D73904A0057AB3D /* Main.storyboard */; };
+		579C89BA1D73904A0057AB3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 579C89B91D73904A0057AB3D /* Assets.xcassets */; };
+		579C89BD1D73904A0057AB3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 579C89BB1D73904A0057AB3D /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		200A9853AF46F5A55DB412E4 /* Pods-lingraph.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lingraph.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lingraph/Pods-lingraph.debug.xcconfig"; sourceTree = "<group>"; };
+		26D254A8615EE9976B03138F /* Pods-lingraph.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lingraph.release.xcconfig"; path = "Pods/Target Support Files/Pods-lingraph/Pods-lingraph.release.xcconfig"; sourceTree = "<group>"; };
+		579C89AF1D7390490057AB3D /* lingraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lingraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		579C89B21D73904A0057AB3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		579C89B41D73904A0057AB3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		579C89B71D73904A0057AB3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		579C89B91D73904A0057AB3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		579C89BC1D73904A0057AB3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		579C89BE1D73904A0057AB3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF2487AB19D5DD9E7E307335 /* Pods_lingraph.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lingraph.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		579C89AC1D7390490057AB3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06B84367A8E8B77F26C3C9A3 /* Pods_lingraph.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F56203730040C46008084CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				200A9853AF46F5A55DB412E4 /* Pods-lingraph.debug.xcconfig */,
+				26D254A8615EE9976B03138F /* Pods-lingraph.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		579C89A61D7390490057AB3D = {
+			isa = PBXGroup;
+			children = (
+				579C89B11D73904A0057AB3D /* lingraph */,
+				579C89B01D7390490057AB3D /* Products */,
+				2F56203730040C46008084CB /* Pods */,
+				B053E1F2EADED5EFECA85223 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		579C89B01D7390490057AB3D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				579C89AF1D7390490057AB3D /* lingraph.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		579C89B11D73904A0057AB3D /* lingraph */ = {
+			isa = PBXGroup;
+			children = (
+				579C89B21D73904A0057AB3D /* AppDelegate.swift */,
+				579C89B41D73904A0057AB3D /* ViewController.swift */,
+				579C89B61D73904A0057AB3D /* Main.storyboard */,
+				579C89B91D73904A0057AB3D /* Assets.xcassets */,
+				579C89BB1D73904A0057AB3D /* LaunchScreen.storyboard */,
+				579C89BE1D73904A0057AB3D /* Info.plist */,
+			);
+			path = lingraph;
+			sourceTree = "<group>";
+		};
+		B053E1F2EADED5EFECA85223 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF2487AB19D5DD9E7E307335 /* Pods_lingraph.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		579C89AE1D7390490057AB3D /* lingraph */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 579C89C11D73904A0057AB3D /* Build configuration list for PBXNativeTarget "lingraph" */;
+			buildPhases = (
+				C4206A6918E19C5D2BCAFCE1 /* [CP] Check Pods Manifest.lock */,
+				579C89AB1D7390490057AB3D /* Sources */,
+				579C89AC1D7390490057AB3D /* Frameworks */,
+				579C89AD1D7390490057AB3D /* Resources */,
+				C43A0ACC6B29267747EADF78 /* [CP] Embed Pods Frameworks */,
+				550EAC2B6B20E35073EA9EA1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lingraph;
+			productName = lingraph;
+			productReference = 579C89AF1D7390490057AB3D /* lingraph.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		579C89A71D7390490057AB3D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Mike;
+				TargetAttributes = {
+					579C89AE1D7390490057AB3D = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 579C89AA1D7390490057AB3D /* Build configuration list for PBXProject "lingraph" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 579C89A61D7390490057AB3D;
+			productRefGroup = 579C89B01D7390490057AB3D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				579C89AE1D7390490057AB3D /* lingraph */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		579C89AD1D7390490057AB3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				579C89BD1D73904A0057AB3D /* LaunchScreen.storyboard in Resources */,
+				579C89BA1D73904A0057AB3D /* Assets.xcassets in Resources */,
+				579C89B81D73904A0057AB3D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		550EAC2B6B20E35073EA9EA1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lingraph/Pods-lingraph-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4206A6918E19C5D2BCAFCE1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C43A0ACC6B29267747EADF78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-lingraph/Pods-lingraph-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		579C89AB1D7390490057AB3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				579C89B51D73904A0057AB3D /* ViewController.swift in Sources */,
+				579C89B31D73904A0057AB3D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		579C89B61D73904A0057AB3D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				579C89B71D73904A0057AB3D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		579C89BB1D73904A0057AB3D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				579C89BC1D73904A0057AB3D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		579C89BF1D73904A0057AB3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		579C89C01D73904A0057AB3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		579C89C21D73904A0057AB3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 200A9853AF46F5A55DB412E4 /* Pods-lingraph.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = lingraph/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Mike.lingraph;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		579C89C31D73904A0057AB3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26D254A8615EE9976B03138F /* Pods-lingraph.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = lingraph/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Mike.lingraph;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		579C89AA1D7390490057AB3D /* Build configuration list for PBXProject "lingraph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				579C89BF1D73904A0057AB3D /* Debug */,
+				579C89C01D73904A0057AB3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		579C89C11D73904A0057AB3D /* Build configuration list for PBXNativeTarget "lingraph" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				579C89C21D73904A0057AB3D /* Debug */,
+				579C89C31D73904A0057AB3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 579C89A71D7390490057AB3D /* Project object */;
+}
