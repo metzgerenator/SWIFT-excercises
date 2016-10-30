@@ -75,7 +75,11 @@ extension PhotoListController: MediaPickermanagerDelegate {
     
     func mediaPickerManager(manager: MediaPickerManager, didFinishPickingImage image: UIImage) {
         
-        let photoFilterController = PhotoFilterController(image: image)
+        let eaglContext = EAGLContext(API: .OpenGLES2)
+        
+        let ciContext = CIContext(options: nil)
+        
+        let photoFilterController = PhotoFilterController(image: image, context: ciContext, eaglContext: eaglContext)
         let navigationController = UINavigationController(rootViewController: photoFilterController)
         
         manager.dismissImagePickerController(animated: true) {

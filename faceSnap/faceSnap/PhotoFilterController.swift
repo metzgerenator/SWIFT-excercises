@@ -10,7 +10,20 @@ import UIKit
 
 class PhotoFilterController: UIViewController {
     
-    private var mainImage: UIImage
+    private var mainImage: UIImage {
+        
+        didSet {
+            
+            photoImageView.image = mainImage
+        }
+        
+        
+    }
+    
+    
+    
+    private let context: CIContext
+    private let eaglContext: EAGLContext
     
     
     private let photoImageView: UIImageView = {
@@ -42,14 +55,15 @@ class PhotoFilterController: UIViewController {
         
         
         collectionView.dataSource = self
+        collectionView.delegate = self
         
         return collectionView
         
     }()
     
-    private lazy var filteredImages: [UIImage] = {
+    private lazy var filteredImages: [CIImage] = {
         
-        let filteredImageBuilder = FilteredImageBuilder(image: self.mainImage)
+        let filteredImageBuilder = FilteredImageBuilder(context: self.context, image: self.mainImage)
         return filteredImageBuilder.imageWithDefaultFilters()
         
         
@@ -57,11 +71,13 @@ class PhotoFilterController: UIViewController {
     }()
     
     
-    init(image: UIImage) {
+    init(image: UIImage, context: CIContext, eaglContext: EAGLContext) {
         self.mainImage = image
+        self.context = context
+        self.eaglContext = eaglContext
+        
         self.photoImageView.image = self.mainImage
         super.init(nibName: nil, bundle: nil)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -71,8 +87,15 @@ class PhotoFilterController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let cancelButton  = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(PhotoFilterController.dismissPhotoFilterController))
+        
+        navigationItem.leftBarButtonItem = cancelButton
+        
+        let nextButton = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: #selector(PhotoFilterController.presentMetadataController))
+        
+        navigationItem.rightBarButtonItem = nextButton
+        
     }
 
 
@@ -128,7 +151,13 @@ extension PhotoFilterController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(FilteredImageCell.reuseIdentifier, forIndexPath: indexPath) as! FilteredImageCell
         
         
-        cell.imageView.image = filteredImages[indexPath.row]
+        
+        
+        let ciImage = filteredImages[indexPath.row]
+        cell.ciContext = context
+        cell.eaglContext = eaglContext
+        cell.image = ciImage
+        
         
         
         return cell
@@ -142,8 +171,41 @@ extension PhotoFilterController: UICollectionViewDataSource {
 
 
 
+//MARK:  - UICollectionViewDelegate 
+
+extension PhotoFilterController: UICollectionViewDelegate {
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let ciImage = filteredImages[indexPath.row]
+        
+        let cgImage = context.createCGImage(ciImage, fromRect: ciImage.extent)
+        mainImage = UIImage(CGImage: cgImage)
+    }
+    
+    
+}
 
 
+
+// MARK: - Navigation 
+
+extension PhotoFilterController {
+    
+    @objc private func dismissPhotoFilterController() {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    
+    @objc private func presentMetadataController() {
+        
+        
+        
+    }
+    
+}
 
 
 

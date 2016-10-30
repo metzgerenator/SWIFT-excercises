@@ -58,23 +58,26 @@ final class FilteredImageBuilder {
     
     
     private let image: UIImage
+    private let context: CIContext
     
     
-    init(image: UIImage){
+    
+    init(context: CIContext, image: UIImage){
         
+        self.context = context
         self.image = image
         
     }
     
     
-    func imageWithDefaultFilters() -> [UIImage] {
+    func imageWithDefaultFilters() -> [CIImage] {
         
         return image(withFilters: PhotoFilter.defaultFilters())
         
     }
     
     
-    func image(withFilters filters: [CIFilter]) -> [UIImage] {
+    func image(withFilters filters: [CIFilter]) -> [CIImage] {
         
        
         return filters.map{image(self.image, withFilter: $0) }
@@ -86,17 +89,46 @@ final class FilteredImageBuilder {
     
     
     
-    func image(image: UIImage, withFilter filter: CIFilter) -> UIImage {
+    func image(image: UIImage, withFilter filter: CIFilter) -> CIImage {
         
         let inputImage = image.CIImage ?? CIImage(image: image)!
         
         filter.setValue(inputImage, forKey: kCIInputImageKey)
         
+        
         let outputImage = filter.outputImage!
         
-        return UIImage(CIImage: outputImage)
+        
+        return outputImage.imageByCroppingToRect(inputImage.extent)
+        
+       
         
     }
     
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
