@@ -1,0 +1,102 @@
+//
+//  FilteredImageBuilder.swift
+//  faceSnap
+//
+//  Created by Aileen Taboy on 10/29/16.
+//  Copyright © 2016 Michael Metzger . All rights reserved.
+//
+
+import Foundation
+import CoreImage
+import UIKit
+
+
+
+final class FilteredImageBuilder {
+    
+    
+    private struct PhotoFilter {
+        
+        
+        static let ColorClamp = "CIColorClamp"
+        static let ColorControls = "CIColorControls"
+        static let PhotoEffectInstant = "CIPhotoEffectInstant"
+        static let PhotoEffectProcess = "CIPhotoEffectProcess"
+        static let PhotoEffectNoir = "CIPhotoEffectNoir"
+        static let Sepia = "CISepiaTone"
+        
+        
+        //Color Clamp
+        static func defaultFilters() -> [CIFilter] {
+            let colorClamp = CIFilter(name: PhotoFilter.ColorClamp)!
+            colorClamp.setValue(CIVector(x: 0.2, y: 0.2, z: 0.2, w: 0.2), forKey: "inputMinComponents")
+            
+            colorClamp.setValue(CIVector(x: 0.9, y: 0.9, z: 0.9, w: 0.9), forKey: "inputMinComponents")
+            
+            // Color Controls
+            let colorControls = CIFilter(name: PhotoFilter.ColorControls)!
+            colorControls.setValue(0.1, forKey: kCIInputSaturationKey)
+            
+            //PhotoEffects
+            let photoEffectInstant = CIFilter(name: PhotoFilter.PhotoEffectInstant)!
+            let photoEffectProcess = CIFilter(name: PhotoFilter.PhotoEffectProcess)!
+            let photoEffectNoir    = CIFilter(name: PhotoFilter.PhotoEffectNoir)!
+            
+            //Sepia
+            let sepia = CIFilter(name: PhotoFilter.Sepia)!
+            sepia.setValue(0.7, forKey: kCIInputIntensityKey)
+            
+            
+            
+            return [colorClamp, colorControls, photoEffectInstant ,photoEffectProcess, photoEffectNoir, sepia]
+            
+        }
+        
+    }
+
+    
+    
+    
+    private let image: UIImage
+    
+    
+    init(image: UIImage){
+        
+        self.image = image
+        
+    }
+    
+    
+    func imageWithDefaultFilters() -> [UIImage] {
+        
+        return image(withFilters: PhotoFilter.defaultFilters())
+        
+    }
+    
+    
+    func image(withFilters filters: [CIFilter]) -> [UIImage] {
+        
+       
+        return filters.map{image(self.image, withFilter: $0) }
+        
+        
+    }
+    
+    
+    
+    
+    
+    func image(image: UIImage, withFilter filter: CIFilter) -> UIImage {
+        
+        let inputImage = image.CIImage ?? CIImage(image: image)!
+        
+        filter.setValue(inputImage, forKey: kCIInputImageKey)
+        
+        let outputImage = filter.outputImage!
+        
+        return UIImage(CIImage: outputImage)
+        
+    }
+    
+    
+}

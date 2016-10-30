@@ -75,8 +75,65 @@ extension PhotoListController: MediaPickermanagerDelegate {
     
     func mediaPickerManager(manager: MediaPickerManager, didFinishPickingImage image: UIImage) {
         
+        let photoFilterController = PhotoFilterController(image: image)
+        let navigationController = UINavigationController(rootViewController: photoFilterController)
+        
+        manager.dismissImagePickerController(animated: true) {
+            
+            self.presentViewController(navigationController, animated: true, completion: nil)
+        }
+        
+        
+        
     }
     
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
